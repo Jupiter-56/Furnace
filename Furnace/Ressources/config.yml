@@ -1,0 +1,78 @@
+####################################################################################################
+
+# English version :
+
+# This plugin was created by JupiDev's Team
+# The plugin's version is 1.0
+# Our Discord --> https://discord.gg/Ut9FGct
+
+# The can be use only on Minecraft 1.8.8, if you want the plugin for an other version of Minecraft
+# please contact us.
+
+# Format :
+
+# For the color please use this character "&".
+
+# Version Française :
+
+# Plugin créé par l'équipe de JupiDev
+# Le plugin est dans la version 1.0
+# Notre Discord --> https://discord.gg/Ut9FGct
+
+# Le plugin s'utilise en 1.8.8, si vous voulez une autre version de Minecraft
+# merci de nous contacter.
+
+# Format :
+
+# Pour la couleur merci d'utiliser ce caractère "&".
+
+####################################################################################################
+plugin-enable: true
+alert:
+  not-enable: true
+
+# Messages :
+
+prefix: "&e[&aFurnace&e] &c>>"
+messages:
+  not-enable: "&cThe plugin is not enable !"
+  cannot-be-cook: "&cThis item cannot be cooked !"
+  no-permission: "&cYou have not the permission to execute this command !"
+  console-executing: "&cThis command can only be done by players !"
+  item-cook: "&aYour item was cooked !"
+  cannot-cook-air: "&cYou cannot cook air !"
+  not-enough-arguments: "&cSorry, no argument ! Please use the command &6/furnaces help &c!"
+  version: "&aThe plugin's version is"
+  author: "&aThis plugin was created by"
+  reload: "&aThe plugin's configuration is reloaded !"
+
+
+# Settings / Paramètre :
+
+furnace:
+  saddle: true
+  armors:
+    leather: true
+    iron: true
+    gold: true
+    diamond: true
+  horse:
+    iron: true
+    gold: true
+    diamond: true
+  tools:
+    wood:
+      shovel: true
+      other: true
+    stone:
+      shovel: true
+      other: true
+    iron:
+      shovel: true
+      other: true
+    gold:
+      shovel: true
+      other: true
+    diamond:
+      shovel: true
+      other: true
