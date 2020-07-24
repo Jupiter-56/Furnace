@@ -1,9 +1,8 @@
 main: fr.jupidev.furnace.Main
 name: Furnace
-version: 1.0
+version: "1.5"
 api-version: 1.8.8
 author: JupiDev
-website: https://discord.gg/Ut9FGct
 
 commands:
   furnace:
@@ -11,3 +10,4 @@ commands:
   furnaces:
     description: This is a command for settings.
     permission: furnace.settings
+
