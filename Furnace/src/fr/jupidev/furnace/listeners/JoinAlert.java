@@ -1,9 +1,8 @@
-package fr.jupidev.furnace.Listeners;
+package fr.jupidev.furnace.listeners;
 
-import fr.jupidev.furnace.Main;
-import fr.jupidev.furnace.Utils.Logger;
-import fr.jupidev.furnace.Utils.Settings;
-import fr.jupidev.furnace.Utils.UpdateChecker;
+import fr.jupidev.furnace.Furnace;
+import fr.jupidev.furnace.utils.Settings;
+import fr.jupidev.furnace.utils.UpdateChecker;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,13 +19,13 @@ public class JoinAlert implements Listener {
     public static void OnJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
 
-        if(Main.getConfiguration().getBoolean("version.alert-onjoin")){
+        if(Furnace.getConfiguration().getBoolean("version.alert-onjoin")){
             if(player.hasPermission("furnace.update")){
-                new UpdateChecker(Main.getInstance(), 80841).getLatestVersion(version -> {
-                    if (Main.getInstance().getDescription().getVersion().equalsIgnoreCase(version)){
-                        player.sendMessage(Main.getConfiguration().getString("version").replaceAll("&", "§") + " " + "§aNo update available, the plugin is up to date !");
+                new UpdateChecker(Furnace.getInstance(), 80841).getLatestVersion(version -> {
+                    if (Furnace.getInstance().getDescription().getVersion().equalsIgnoreCase(version)){
+                        player.sendMessage(Furnace.getConfiguration().getString("version").replaceAll("&", "§") + " " + "§aNo update available, the plugin is up to date !");
                     } else {
-                        player.sendMessage(Main.getConfiguration().getString("prefix").replaceAll("&", "§") + " " + "§aA new update is available, please check our Spigot page !");
+                        player.sendMessage(Furnace.getConfiguration().getString("prefix").replaceAll("&", "§") + " " + "§aA new update is available, please check our Spigot page !");
                     }
                 });
 

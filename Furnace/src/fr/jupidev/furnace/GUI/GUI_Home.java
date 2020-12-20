@@ -1,9 +1,8 @@
 package fr.jupidev.furnace.GUI;
 
-import fr.jupidev.furnace.Main;
-import fr.jupidev.furnace.Utils.Logger;
-import fr.jupidev.furnace.Utils.Settings;
-import fr.jupidev.furnace.Utils.UpdateChecker;
+import fr.jupidev.furnace.Furnace;
+import fr.jupidev.furnace.utils.Settings;
+import fr.jupidev.furnace.utils.UpdateChecker;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,7 +11,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Arrays;
 
@@ -25,7 +23,7 @@ public class GUI_Home implements CommandExecutor {
                 Player p = (Player) sender;
                 if (args.length == 0) {
 
-                    p.sendMessage( Main.getConfiguration().getString("prefix") + " " + Main.getConfiguration().getString("messages.not-enough-arguments"));
+                    p.sendMessage( Furnace.getConfiguration().getString("prefix") + " " + Furnace.getConfiguration().getString("messages.not-enough-arguments"));
 
                 } else {
 
@@ -44,19 +42,19 @@ public class GUI_Home implements CommandExecutor {
                         }
                         if(arg.equalsIgnoreCase("version")){
 
-                            p.sendMessage(Main.getConfiguration().getString("prefix") + " " + Main.getConfiguration().getString("messages.version") + " " + Settings.VERSION + " " + "§r§a!");
+                            p.sendMessage(Furnace.getConfiguration().getString("prefix") + " " + Furnace.getConfiguration().getString("messages.version") + " " + Settings.VERSION + " " + "§r§a!");
 
                         }
                         if(arg.equalsIgnoreCase("author")){
 
-                            p.sendMessage(Main.getConfiguration().getString("prefix") + " " + Main.getConfiguration().getString("messages.author") + " " + "§lJupiDev - Jupiter_56" + " " + "§r§a!");
+                            p.sendMessage(Furnace.getConfiguration().getString("prefix") + " " + Furnace.getConfiguration().getString("messages.author") + " " + "§lJupiDev - Jupiter_56" + " " + "§r§a!");
 
 
                         }
                         if(arg.equalsIgnoreCase("reload")){
 
-                            p.sendMessage(Main.getConfiguration().getString("prefix") + " " + Main.getConfiguration().getString("messages.reload"));
-                            Main.getInstance().reloadConfig();
+                            p.sendMessage(Furnace.getConfiguration().getString("prefix") + " " + Furnace.getConfiguration().getString("messages.reload"));
+                            Furnace.getInstance().reloadConfig();
 
                         }
                         if(arg.equalsIgnoreCase("panel")){
@@ -101,7 +99,7 @@ public class GUI_Home implements CommandExecutor {
                             item2.setItemMeta(meta2);
                             panel.setItem(10, item2);
 
-                            if(Main.getConfiguration().getBoolean("plugin-enable")){
+                            if(Furnace.getConfiguration().getBoolean("plugin-enable")){
 
                                 ItemStack item3 = new ItemStack(Material.WOOL,1,(byte) 5/*Vert*/);
                                 ItemMeta meta3 = item3.getItemMeta();
@@ -146,8 +144,8 @@ public class GUI_Home implements CommandExecutor {
 
                         if(arg.equalsIgnoreCase("update")){
                             p.sendMessage(ChatColor.RED + "Checking for updates...");
-                            new UpdateChecker(Main.getInstance(), 80841).getLatestVersion(version -> {
-                                if (!Main.getInstance().getDescription().getVersion().equalsIgnoreCase(version)){
+                            new UpdateChecker(Furnace.getInstance(), 80841).getLatestVersion(version -> {
+                                if (!Furnace.getInstance().getDescription().getVersion().equalsIgnoreCase(version)){
                                     p.sendMessage(ChatColor.GRAY + "****************************************************************");
                                     p.sendMessage(ChatColor.RED + "Furnace is outdated!");
                                     p.sendMessage(ChatColor.RED + "Newest version: " + version);
@@ -168,7 +166,7 @@ public class GUI_Home implements CommandExecutor {
                     }
                 }
             } else {
-                sender.sendMessage(Main.getConfiguration().getString("prefix") + " " + Main.getConfiguration().getString("messages.console-executing"));
+                sender.sendMessage(Furnace.getConfiguration().getString("prefix") + " " + Furnace.getConfiguration().getString("messages.console-executing"));
             }
         }
 

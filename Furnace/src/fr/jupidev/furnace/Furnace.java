@@ -1,26 +1,24 @@
 package fr.jupidev.furnace;
 
-import fr.jupidev.furnace.Commands.Furnace;
 
-import fr.jupidev.furnace.GUI.GUI_Listeners_Furnace;
-import fr.jupidev.furnace.GUI.GUI_Home;
-import fr.jupidev.furnace.Managers.CommandsManagers;
-import fr.jupidev.furnace.Managers.ListenersManagers;
-import fr.jupidev.furnace.Utils.Logger;
-import fr.jupidev.furnace.Utils.Settings;
-import fr.jupidev.furnace.Utils.UpdateChecker;
+import fr.jupidev.furnace.managers.CommandsManagers;
+import fr.jupidev.furnace.managers.ListenersManagers;
+import fr.jupidev.furnace.utils.Logger;
+import fr.jupidev.furnace.utils.Settings;
+import fr.jupidev.furnace.utils.UpdateChecker;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+
 import java.io.File;
 
-public class Main extends JavaPlugin {
+public class Furnace extends JavaPlugin {
 
-    private static Main instance;
+    private static Furnace instance;
 
-    public Main() {
+    public Furnace() {
     }
     @Override
     public void onLoad() {
@@ -37,9 +35,9 @@ public class Main extends JavaPlugin {
         csl.sendMessage(c("&8[&bF&8] &dVersion &8--> &a " + Settings.VERSION));
         csl.sendMessage(c("&8[&bF&8] &dSupport Link &8--> &a " + Settings.SUPPORT_DISCORD_URL));
         csl.sendMessage(c("&8[&bF&8] &dSpigot Link &8--> &a " + Settings.PLUGIN_URL));
-        csl.sendMessage(cOff(cOn(c("&8[&bF&8] &dPlugin &8--> ") + Main.getConfiguration().getBoolean("plugin-enable"))));
-        if(Main.getConfiguration().getBoolean("enable")) {
-            csl.sendMessage(cOff(cOn(c("&8[&bF&8] &dAlerts &8--> ") + Main.getConfiguration().getBoolean("alert.not-enable"))));
+        csl.sendMessage(cOff(cOn(c("&8[&bF&8] &dPlugin &8--> ") + Furnace.getConfiguration().getBoolean("plugin-enable"))));
+        if(Furnace.getConfiguration().getBoolean("enable")) {
+            csl.sendMessage(cOff(cOn(c("&8[&bF&8] &dAlerts &8--> ") + Furnace.getConfiguration().getBoolean("alert.not-enable"))));
         } else {
 
             csl.sendMessage(c("&8[&bF&8] &dAlerts &8--> &4Plugin Deactivated"));
@@ -52,7 +50,7 @@ public class Main extends JavaPlugin {
         MetricsLite metrics = new MetricsLite(this,8300);
         //Create Configuration File
         this.createConfig();
-//Update Checker
+        //Update Checker
         new UpdateChecker(this, 80841).getLatestVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)){
                 Logger.log(Logger.LogLevel.SUCCESS, "The plugin is up to date !");
@@ -91,7 +89,7 @@ public class Main extends JavaPlugin {
     }
 
 
-    public static Main getInstance() {
+    public static Furnace getInstance() {
         return instance;
     }
 
@@ -100,7 +98,7 @@ public class Main extends JavaPlugin {
     }
 
 
-    //Couleurs de la console
+    //Colors
     public static String c(String msg) {
         return msg.replaceAll("&", "§");
     }

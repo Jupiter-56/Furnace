@@ -1,4 +1,4 @@
-package fr.jupidev.furnace.Utils;
+package fr.jupidev.furnace.utils;
 
 public class Settings {
 
