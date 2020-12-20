@@ -1,6 +1,6 @@
-package fr.jupidev.furnace.Utils;
+package fr.jupidev.furnace.utils;
 
-import fr.jupidev.furnace.Main;
+import fr.jupidev.furnace.Furnace;
 import org.bukkit.Bukkit;
 
 import java.io.IOException;
@@ -11,10 +11,10 @@ import java.util.function.Consumer;
 
 public class UpdateChecker {
 
-    private Main plugin;
+    private Furnace plugin;
     private int resourceId;
 
-    public UpdateChecker(Main plugin, int resourceId) {
+    public UpdateChecker(Furnace plugin, int resourceId) {
         this.plugin  = plugin;
         this.resourceId = resourceId;
     }

@@ -1,6 +1,6 @@
 package fr.jupidev.furnace.GUI;
 
-import fr.jupidev.furnace.Main;
+import fr.jupidev.furnace.Furnace;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -31,7 +31,7 @@ public class GUI_Listeners_Furnace implements Listener {
             if(current.getType() == Material.WOOL && current.getData().getData() == 5){
 
 
-                Main.getInstance().getConfig().set("plugin-enable", false);
+                Furnace.getInstance().getConfig().set("plugin-enable", false);
 
 
                 ItemStack item4 = new ItemStack(Material.WOOL,1, (byte) 14/*Rouge*/);
@@ -49,7 +49,7 @@ public class GUI_Listeners_Furnace implements Listener {
 
             if(current.getType() == Material.WOOL && current.getData().getData() == 14){
 
-                Main.getInstance().getConfig().set("plugin-enable", true);
+                Furnace.getInstance().getConfig().set("plugin-enable", true);
 
                 ItemStack item3 = new ItemStack(Material.WOOL,1,(byte) 5/*Vert*/);
                 ItemMeta meta3 = item3.getItemMeta();
@@ -68,7 +68,7 @@ public class GUI_Listeners_Furnace implements Listener {
 
             if(current.getType() == Material.BARRIER){
 
-                Main.getInstance().reloadConfig();
+                Furnace.getInstance().reloadConfig();
 
 
             }
