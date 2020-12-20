@@ -36,6 +36,9 @@ plugin-enable: true
 alert:
   not-enable: true
 
+cooldown: true
+  time: 60 #In seconds
+
 # Messages :
 
 prefix: "&e[&aFurnace&e] &c>>"
@@ -50,6 +53,8 @@ messages:
   version: "&aThe plugin's version is"
   author: "&aThis plugin was created by"
   reload: "&aThe plugin's configuration is reloaded !"
+  cooldown-error: "&aYou can not execute this command, please wait :"
+  cooldown-unit: "seconds !"
 
 
 # Settings / Paramètre :
