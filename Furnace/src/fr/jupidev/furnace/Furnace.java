@@ -13,10 +13,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.UUID;
 
 public class Furnace extends JavaPlugin {
 
     private static Furnace instance;
+    public HashMap<UUID, Long> cooldown;
+
 
     public Furnace() {
     }
@@ -28,6 +32,7 @@ public class Furnace extends JavaPlugin {
 
     public void onEnable() {
         instance = this;
+        cooldown = new HashMap<>();
 
         ConsoleCommandSender csl = Bukkit.getConsoleSender();
         csl.sendMessage(c("&6------------------&bFurnace&6------------------"));
