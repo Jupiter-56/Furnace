@@ -1,10 +1,10 @@
 package fr.jupidev.furnace;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.craftbukkit.libs.com.google.gson.JsonArray;
+import org.bukkit.craftbukkit.libs.com.google.gson.JsonObject;
+import org.bukkit.craftbukkit.libs.com.google.gson.JsonParser;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
