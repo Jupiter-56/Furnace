@@ -3,8 +3,8 @@
 # English version :
 
 # This plugin was created by JupiDev's Team
-# The plugin's version is 1.5
-# Our Discord --> https://discord.gg/jMmy6ng
+# The plugin's version is 1.6
+# Our Discord --> https://discord.gg/YUdc4W9y8e
 
 # The can be use only on Minecraft 1.8.8, if you want the plugin for an other version of Minecraft
 # please contact us.
@@ -16,8 +16,8 @@
 # Version Française :
 
 # Plugin créé par l'équipe de JupiDev
-# Le plugin est dans la version 1.5
-# Notre Discord --> https://discord.gg/jMmy6ng
+# Le plugin est dans la version 1.6
+# Notre Discord --> https://discord.gg/YUdc4W9y8e
 
 # Le plugin s'utilise en 1.8.8, si vous voulez une autre version de Minecraft
 # merci de nous contacter.
@@ -57,7 +57,7 @@ messages:
   cooldown-unit: "seconds !"
 
 
-# Settings / Paramètre :
+# Settings / Paramètres :
 
 furnace:
   saddle: true
